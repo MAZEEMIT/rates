@@ -1,0 +1,266 @@
+<title>Nov 2026 Price Lists and Bonus</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: sticky header with tabs and search, then one dense table per group; bonus tab ends with a claim checker. */
+:root{
+  --bg:#f6f8fa; --surface:#ffffff; --fg:#14202b; --muted:#5b6b79; --line:#dbe3ea;
+  --accent:#0a7fb8; --head:#00AFEF; --head-fg:#ffffff; --hl:#fff3a3; --hl-fg:#4a3b00;
+  --na:#97a4af; --good:#15803d;
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1820; --surface:#16222c; --fg:#e6edf3; --muted:#93a3b1; --line:#27384a;
+  --accent:#4fc3f7; --head:#0b6d99; --head-fg:#ffffff; --hl:#5c4f10; --hl-fg:#ffe98a;
+  --na:#6b7c8a; --good:#4ade80; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1820; --surface:#16222c; --fg:#e6edf3; --muted:#93a3b1; --line:#27384a;
+  --accent:#4fc3f7; --head:#0b6d99; --head-fg:#ffffff; --hl:#5c4f10; --hl-fg:#ffe98a;
+  --na:#6b7c8a; --good:#4ade80; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:14px;line-height:1.45;
+  padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:980px;margin:0 auto}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:14px 0 10px;border-bottom:1px solid var(--line)}
+.brand{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-size:20px;margin:2px 0 10px;font-weight:700;text-wrap:balance}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:600;padding:7px 12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:6px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.tabs button:focus-visible,#q:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#q{flex:1 1 180px;min-width:0;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:12.5px;margin:12px 0 4px}
+.chip{display:inline-block;padding:0 6px;border-radius:3px;background:var(--hl);color:var(--hl-fg);font-weight:600}
+section{margin-top:22px}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:var(--muted);font-weight:700}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th{background:var(--head);color:var(--head-fg);text-align:left;font-size:12px;padding:8px 10px;white-space:nowrap;font-weight:600}
+td{padding:7px 10px;border-top:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right}
+td.sr{color:var(--muted);width:1%}
+.name{font-weight:600}
+.na{color:var(--na)}
+td.hl{background:var(--hl);color:var(--hl-fg);font-weight:700}
+.after{font-weight:600}
+.empty{padding:16px;color:var(--muted)}
+.note{color:var(--muted);font-size:12.5px;margin-top:10px;max-width:70ch}
+.calc{margin-top:26px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:16px}
+.calc h2{margin-bottom:10px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);font-weight:600;min-width:0}
+select,input{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-width:0;width:100%}
+.out{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.out div{border-top:2px solid var(--line);padding-top:6px}
+.out span{display:block;font-size:12px;color:var(--muted)}
+.out b{font-size:17px;font-variant-numeric:tabular-nums}
+.bad{color:#d33a2c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bad{color:#ff8a80}}
+:root[data-theme="dark"] .bad{color:#ff8a80}
+[hidden]{display:none!important}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="brand">Beon Life Health Care · Millennium Laboratories</div>
+  <h1>November 2026 Price Lists and Bonus Scheme</h1>
+  <div class="bar">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-el" aria-selected="true">Elegant</button>
+      <button role="tab" id="t-ex" aria-selected="false">Excellent &amp; Sellvis</button>
+      <button role="tab" id="t-bo" aria-selected="false">Bonus scheme</button>
+    </div>
+    <input id="q" type="search" placeholder="Search product" aria-label="Search product">
+  </div>
+</header>
+
+<div class="legend" id="legend"></div>
+<main id="main"></main>
+</div>
+
+<script>
+// price rows: [name, pack, MRP, DP(TP), changedFlag]
+var EL=[
+["BEON VIZTAT DROP","30 ml",265,155],["BEON VIZTAT DROP","10 ml",null,110],
+["DEVAAS-D LIQUID (one shot)","25 ml",433,190],["DEVAAS-D DROPS (kids)","10 ml",352,150],["DEVAAS-D (yellow cap)","25 ml",433,160],
+["INSTACID SYP MINT","120 ml",178.85,76],["INSTACID SYP STRAWBERRY","120 ml",178.85,76],["INSTACID SYP ORANGE","120 ml",178.85,76],
+["INSTACID SACHET MINT","10's",265.72,125],["INSTACID SACHET STRAWBERRY","10's",265.72,125],
+["COFMAXYL SYP","120 ml",173.74,76],["COFMAXYL DROPS","30 ml",153.3,70,1],
+["FINAGO SYP","120 ml",235.06,90],["FINAGO DROP","30 ml",163.52,75],
+["PRALAX SYP","120 ml",235.06,95],["PRALAX SYP (kids)","60 ml",158.34,70],
+["COLEEZ DROPS","30 ml",143.08,78,1],
+["PROLAC VANILLA","1's",792.05,325],["PROLAC CHOCO","1's",802.27,340],
+["INTRA-C JAR ORANGE","30's",470.12,220],["INTRA-C JAR MANGO","30's",470.12,220],
+["MACSTIN ZINC SYP","60 ml",143.08,65],
+["JAM E PODINA SYP","120 ml",178.85,76],["JAM E PODINA DROPS","30 ml",168.63,70],
+["BH-CAL ALU","20's",562.1,165,1],["BH-CAL JAR","30's",776.72,290],
+["APTIMA SYP","120 ml",235.06,90],["APTIMA DROPS (kids)","30 ml",245.28,80],["APTIMA ALU","20's",577.43,160],["APTIMA JAR","30's",781.83,245],
+["ANIFEX","20's",null,250],["ANIFEX","30's",null,345],
+["WIZTRUM SYP","60 ml",220,100],["WIZTRUM SYP","120 ml",330,150],["WIZTRUM DROP (kids, choco)","30 ml",null,105],
+["BIONZO SACHETS","10's",265.72,130,1],["QD 10 TAB","10's",572,240],
+["INTRA-C SACHET ORANGE","10's",null,null],["INTRA-C EFFERVESCENT ORANGE","10's",470,220],
+["LIGOWEL ALU","10's",470.12,190],["LIGOWEL JAR","30's",1400.14,495],
+["REFOLIC SACHET","10's",1175.3,320],
+["FEPREG ALU","20's",694.96,270],["FEPREG JAR","30's",1250,450],
+["MIDIFOL SYP","120 ml",235.06,120],["MIDIFOL DROPS","30 ml",199.29,85],["MIDIFOL ALU","20's",546.77,172],
+["OPTHOVIT SYP","120 ml",235.06,110],["OPTHOVIT ALU","20's",480.34,180],
+["TOOT SIAH SYP","120 ml",201.33,90],["EURO-D3 ALU","30's",398.58,150],
+["MS-GINKO SYP","120 ml",329,100],["MS-GINKO SYP","240 ml",723,190],
+["WIZCOBAL TAB","30's",330,130],
+["MACMIN JAR","30's",991.34,310,1],["MACMIN ALU","20's",786.94,230,1]
+];
+var EXM=[
+["DVIN D SOFTGEL","1's",390,90],["CINO D DROPS (kids)","10 ml",337.26,140],["CINO D DRINKABLE","25 ml",423.11,195],
+["DIVER STRONG MEN SACHET","10's",1995,650],["ENSICID ANTACID SYP","120 ml",222,85],["HAZMION SACHET","10's",290,150],
+["PULMITUS SYP","120 ml",220,90],["BEOFEV LIQUID","60 ml",165,65],["GLUTAVIZ","6's",1995,795],
+["VEONVIT A-Z TAB","20's",650,195],["VEONVIT A-Z JAR","30's",795,275],["VEONCOBAL ORAL LIQUID","10's",998,285],
+["VEONCOBAL ALU TAB","30's",449.82,150],["VEONTIN BIOTIN JAR","30's",1365,430],["BIONZO SYP","120 ml",250,130],
+["MS PODINA SYP","120 ml",null,null],["MS PODINA SYP","240 ml",null,null],["MACFLORA SACHET","10's",680,205],
+["BEON INTRA CZ SYP","60 ml",148,60],["INTRA C LIQUID DROPS","10 ml",null,null],["MS-FOL","60's",192,90],
+["HYOWIZ TAB","50's",null,null],["NOSVITRUM ORS SACHET","20's",650,360],["MS VIT FISH OIL SYP","120 ml",null,null],
+["MS VIT DROPS","30 ml",null,null],["GLOST MOM VANILLA","1's",802.27,320],["GLOST MOM CHOCO","1's",825,340],
+["INSTAFOL","30's",474.3,140],["MAGTUM 3 ALU","20's",633.64,400],["FLORID TAB","20's",470.12,200],
+["GLOMOR SYP","120 ml",245.28,98],["GLOMOR TAB","20's",449.68,150],["GLOMOR DROPS","30 ml",null,90],
+["GLYCINOS TAB","10's",450,175],["GLYCINOS JAR","30's",1350,425],["GLYCINOS JAR","60's",2250,650],
+["MACVIT ALU","20's",602.98,150],["MACVIT JAR","30's",807.38,230],["OSTMAC ALU","2x10's",508.96,140],
+["OSTMAC CHEWABLE JAR","30's",694.96,195],["OSTMAC SYP","120 ml",null,null],
+["CINO-Z EFFERVESCENT ORANGE","20's",388.36,165],["MS TOOT SIAH TAB","50's",null,null]
+];
+var SF=[
+["CALCIUM-C SACHET","10's",220,90],["PRACRAN SACHET","10's",440,150],["KALIFER-D SYP","120 ml",290,105],
+["FESH-DAY D3 DROPS","10 ml",330,98],["GINOFESH SYP","240 ml",775,225],["CHIROTOL-F SACHET","10's",1050,295]
+];
+var SA=[
+["SOGEL MOUTH GEL TUBE","20 mg",185,95],["ORA OIL","10 ml",198,110],["XONLY PAIN OIL","1's",1650,595],
+["PANELGESIC CREAM","30 gm",250,125],["NET MOSQUITO REPELLENT CREAM","1's",340,200]
+];
+// bonus rows: [name, pack, TP, N, M, after-bonus, changedFlag]
+var BE=[
+["INSTACID SYP MINT","120 ml",76,12,1,70],["INSTACID SYP STRAWBERRY","120 ml",76,12,1,70],["INSTACID SYP ORANGE","120 ml",76,12,1,70],
+["INSTACID SACHET MINT","10's",125,12,1,115],["INSTACID SACHET STRAWBERRY","10's",125,12,1,115],
+["JAM E PODINA SYP","120 ml",76,12,1,70],["FINAGO SYP","120 ml",90,12,1,83],
+["MACMIN JAR","30's",310,4,1,248,1],["MACMIN ALU","20's",230,4,1,184,1],
+["COFMAXYL SYP","120 ml",76,12,1,70],["WIZCOBAL","20's",130,5,1,108],["MACSTIN","60 ml",65,12,1,60],
+["APTIMA JAR","30's",245,5,1,204],["TOOT SIAH SYP","120 ml",90,12,1,83],["WIZCOBAL","30's",130,5,1,108],
+["BIO-D3","20's",135,5,3,84]
+];
+var BX=[
+["FLORID TAB","20's",200,5,1,167],["BEOFEV SYP","60 ml",65,12,1,60],["MS-FOL","60's",90,10,1,82],
+["DVIN D SOFTGEL","1's",90,10,1,82],["DIVER STRONG MEN SACHET","10's",650,5,1,542,1],["INSTAFOL TAB","30's",140,4,1,112,1]
+];
+var BS=[
+["PRACRAN SACHETS","10's",150,10,1,135],["ORA OIL","10 ml",110,11,1,101],["SOGEL MOUTH GEL","20 mg",95,11,1,87],["KALIFER-D SYP","120 ml",105,10,1,95]
+];
+
+var tab="el", query="";
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function fmt(v){return v==null?'<span class="na">—</span>':(Math.round(v*100)/100).toLocaleString("en-US",{minimumFractionDigits:v%1?2:0})}
+function match(r){return !query||r[0].toLowerCase().indexOf(query)>-1}
+
+function priceTable(title,rows){
+  var f=rows.filter(match), h="";
+  f.forEach(function(r,i){
+    h+='<tr><td class="sr">'+(rows.indexOf(r)+1)+'</td><td class="name">'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td class="n">'+fmt(r[2])+
+       '</td><td class="n'+(r[4]?' hl':'')+'">'+fmt(r[3])+'</td></tr>';
+  });
+  return '<section><h2>'+esc(title)+'</h2><div class="scroll">'+(f.length?
+    '<table><thead><tr><th>#</th><th>Product</th><th>Pack</th><th class="n">MRP</th><th class="n">DP (TP)</th></tr></thead><tbody>'+h+'</tbody></table>'
+    :'<div class="empty">No product matches your search.</div>')+'</div></section>';
+}
+function bonusTable(title,rows,start){
+  var f=rows.filter(match), h="";
+  f.forEach(function(r){
+    h+='<tr><td class="sr">'+(start+rows.indexOf(r))+'</td><td class="name">'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td class="n">'+r[2]+
+       '</td><td class="n'+(r[6]?' hl':'')+'">'+r[3]+' + '+r[4]+'</td><td class="n after'+(r[6]?' hl':'')+'">'+r[5]+'</td></tr>';
+  });
+  return '<section><h2>'+esc(title)+'</h2><div class="scroll">'+(f.length?
+    '<table><thead><tr><th>#</th><th>Product</th><th>Pack</th><th class="n">TP incl. GST</th><th class="n">Bonus</th><th class="n">After bonus</th></tr></thead><tbody>'+h+'</tbody></table>'
+    :'<div class="empty">No product matches your search.</div>')+'</div></section>';
+}
+var GL={el:"Elegant",ex:"Excellent (Millennium)",sv:"Excellent (Sellvis)"};
+var ALLB=[];
+BE.forEach(function(r){ALLB.push({r:r,g:"el"})});
+BX.forEach(function(r){ALLB.push({r:r,g:"ex"})});
+BS.forEach(function(r){ALLB.push({r:r,g:"sv"})});
+function schemes(){
+  var s=[];
+  ALLB.forEach(function(o){var k=o.r[3]+"+"+o.r[4];if(s.indexOf(k)<0)s.push(k)});
+  s.sort(function(a,b){return parseInt(b)-parseInt(a)||a.localeCompare(b)});
+  return s;
+}
+function calc(){
+  var g='<option value="all">All groups</option>'+Object.keys(GL).map(function(k){return '<option value="'+k+'">'+GL[k]+'</option>'}).join("");
+  var b='<option value="all">All bonus schemes</option>'+schemes().map(function(x){return '<option value="'+x+'">'+x+'</option>'}).join("");
+  return '<div class="calc"><h2>Bonus claim check</h2><div class="fields">'+
+   '<label>Group<select id="c-g">'+g+'</select></label>'+
+   '<label>Bonus scheme<select id="c-b">'+b+'</select></label>'+
+   '<label>Product<select id="c-p"></select></label>'+
+   '<label>Quantity sold<input id="c-s" type="number" min="0" inputmode="numeric" value="272"></label>'+
+   '<label>Bonus units claimed<input id="c-c" type="number" min="0" inputmode="numeric" value="27"></label></div>'+
+   '<p class="note" id="c-n"></p><div class="out" id="c-o"></div>'+
+   '<p class="note">Maximum valid bonus units = sold quantity ÷ N, rounded down. Excess units are valued at TP and removed from the claim, then the 12% DP discount is deducted. Add up the products from the rows; never use the SSR total cell.</p></div>';
+}
+function fillProducts(){
+  var g=$("c-g").value,b=$("c-b").value,h="",n=0;
+  ALLB.forEach(function(o,i){
+    if((g==="all"||o.g===g)&&(b==="all"||o.r[3]+"+"+o.r[4]===b)){
+      n++;h+='<option value="'+i+'">'+esc(o.r[0])+' '+esc(o.r[1])+' · '+o.r[3]+'+'+o.r[4]+'</option>';
+    }
+  });
+  $("c-p").innerHTML=h||'<option value="">No product with this bonus</option>';
+  $("c-n").textContent=n+(n===1?" product":" products")+" to choose from";
+  runCalc();
+}
+function runCalc(){
+  var o=ALLB[+$("c-p").value];
+  if(!o||$("c-p").value===""){$("c-o").innerHTML="";return}
+  var r=o.r, s=+$("c-s").value||0, c=+$("c-c").value||0;
+  var max=Math.floor(s/r[3]), ok=Math.min(c,max), ex=c-ok;
+  var claim=c*r[2], exv=ex*r[2], net=(claim-exv)*0.88;
+  var rs=function(v){return "Rs "+(Math.round(v*100)/100).toLocaleString("en-US")};
+  $("c-o").innerHTML=
+   '<div><span>TP</span><b>'+r[2]+'</b></div>'+
+   '<div><span>Max valid bonus units</span><b>'+max+'</b></div>'+
+   '<div><span>Excess units</span><b class="'+(ex?'bad':'')+'">'+ex+'</b></div>'+
+   '<div><span>Claim value at TP</span><b>'+rs(claim)+'</b></div>'+
+   '<div><span>Excess value</span><b>'+rs(exv)+'</b></div>'+
+   '<div><span>Payable after 12% DP discount</span><b>'+rs(net)+'</b></div>';
+}
+function renderBT(){
+  $("bt").innerHTML=bonusTable("Elegant Group",BE,1)+bonusTable("Excellent Group (Millennium)",BX,BE.length+1)+bonusTable("Excellent Group (Sellvis)",BS,BE.length+BX.length+1);
+}
+function render(){
+  var lg=$("legend"), m=$("main");
+  if(tab==="el"){
+    lg.innerHTML='<span><span class="chip">Yellow</span> rate changed this month</span><span><span class="na">—</span> not available yet</span><span>DP is commonly called TP</span>';
+    m.innerHTML=priceTable("Elegant Group",EL);
+  }else if(tab==="ex"){
+    lg.innerHTML='<span>Empty rate means not available yet. Empty MRP only means MRP not known.</span><span>DP is commonly called TP</span>';
+    m.innerHTML=priceTable("Excellent Group (Millennium)",EXM)+priceTable("Sellvis (Fresh Pharma)",SF)+priceTable("Sellvis (Al Ain Neutro)",SA);
+  }else{
+    lg.innerHTML='<span><span class="chip">Yellow</span> changed this month</span><span>Bonus slabs below 10+1 are special bonuses for stock clearance</span>';
+    m.innerHTML='<div id="bt"></div>'+calc();
+    renderBT();
+    $("c-g").addEventListener("change",fillProducts);
+    $("c-b").addEventListener("change",fillProducts);
+    ["c-p","c-s","c-c"].forEach(function(id){$(id).addEventListener("input",runCalc)});
+    fillProducts();
+  }
+}
+function setTab(t){
+  tab=t;
+  [["el","t-el"],["ex","t-ex"],["bo","t-bo"]].forEach(function(x){$(x[1]).setAttribute("aria-selected",x[0]===t?"true":"false")});
+  render();
+}
+$("t-el").onclick=function(){setTab("el")};
+$("t-ex").onclick=function(){setTab("ex")};
+$("t-bo").onclick=function(){setTab("bo")};
+$("q").addEventListener("input",function(e){
+  query=e.target.value.trim().toLowerCase();
+  if(tab==="bo")renderBT();else render();
+});
+render();
+</script>
